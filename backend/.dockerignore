@@ -1,0 +1,5 @@
+target
+.git
+.idea
+files
+hs_err_pid*.log

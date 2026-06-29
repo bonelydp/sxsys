@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.SampleMapper">
+
+  <!--  &lt;!&ndash; 查询所有 &ndash;&gt;
+    <select id="selectAll" resultType="com.example.syxm.entity.SampleEntity">
+        SELECT * FROM sampledata
+    </select>
+
+    &lt;!&ndash; 根据ID查询 &ndash;&gt;
+    <select id="findById" resultType="com.example.syxm.entity.SampleEntity">
+        SELECT * FROM sampledata WHERE id = #{id}
+    </select>
+
+    &lt;!&ndash; 新增 &ndash;&gt;
+    <insert id="save">
+        INSERT INTO sampledata (column1, column2, ...)
+        VALUES (#{column1}, #{column2}, ...)
+    </insert>
+
+    &lt;!&ndash; 删除 &ndash;&gt;
+    <delete id="deleteById">
+        DELETE FROM sampledata WHERE id = #{id}
+    </delete>
+
+    &lt;!&ndash; 更新状态 &ndash;&gt;
+    <update id="updateStatus">
+        UPDATE sampledata SET status = #{status} WHERE id = #{id}
+    </update>
+-->
+</mapper>

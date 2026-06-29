@@ -1,0 +1,37 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local dependency caches
+.m2/
+
+# Frontend build and dependencies
+frontend/node_modules/
+frontend/dist/
+
+# Backend build and IDE metadata
+backend/target/
+backend/.idea/
+backend/*.iml
+backend/hs_err_pid*.log
+
+# Runtime uploads and generated data
+backend/files/
+data/files/*
+!data/files/.gitkeep
+data/bio_jobs/*
+!data/bio_jobs/.gitkeep
+__pycache__/
+*.py[cod]
+
+# Large third-party bioinformatics installers
+bio_software/*.tar.gz
+bio_software/*.rpm
+
+# Editors and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
