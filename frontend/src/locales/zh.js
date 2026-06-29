@@ -1,7 +1,7 @@
 export default {
     message: {
       language: "语言",
-      home: "首页aaaaaaa",
+      home: "首页",
       science: "病原科普",
       teamIntroduction: "团队介绍",
       resourceShare: "资源共享",
