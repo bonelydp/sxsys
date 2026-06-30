@@ -9622,4 +9622,21 @@ INSERT INTO `user` VALUES (16, 'shouyixiangmu', '123456', '1348615488@qq.com', '
 INSERT INTO `user` VALUES (17, 'adminnn', '123456', NULL, '2024-12-07 11:27:38', '2024-12-07 11:27:38', 'admin');
 INSERT INTO `user` VALUES (20, 'huanondaxue', '123456', NULL, '2025-01-10 09:28:36', '2025-01-10 09:28:36', 'user');
 
+-- ----------------------------
+-- Table structure for page_view
+-- ----------------------------
+DROP TABLE IF EXISTS `page_view`;
+CREATE TABLE `page_view`  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `view_type` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT 'visitor or user',
+  `count` bigint(0) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of page_view
+-- ----------------------------
+INSERT INTO `page_view` VALUES (1, 'visitor', 0);
+INSERT INTO `page_view` VALUES (2, 'user', 0);
+
 SET FOREIGN_KEY_CHECKS = 1;

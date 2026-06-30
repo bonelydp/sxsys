@@ -35,7 +35,7 @@ public class  WebConfig implements WebMvcConfigurer {
                 "/sampleinfo/year","/sampleinfo/host","/sampleinfo/province_infectionRate",
                 "/sampleinfo/details","/sampleinfo/infectionRate","/sampleinfo/province-infection-count",
                 "/sampleinfo/host_details","/sampleinfo/city-infection-count",
-                "/sampleinfo/all-infection-count","/sampleinfo/sample-host-province-count");
+                "/sampleinfo/all-infection-count","/sampleinfo/sample-host-province-count","/pageview/**");
     }
 
     @Override

@@ -18,6 +18,9 @@ export default {
 
         notification: "Notification",
         more: "More",
+        pageViews: "Page Views",
+        visitorViews: "Visitor Views",
+        userViews: "User Views",
         page: "page",
 
         dataVisualization: "Data Visualization",

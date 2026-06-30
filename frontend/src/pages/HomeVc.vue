@@ -21,6 +21,21 @@
           <NotificationVc v-for="(item, index) in newsItems.slice(0, 2)" :key="index" :id="item.id" :title="item.title"
             :date="item.date"></NotificationVc>
         </el-card>
+        <el-card shadow="hover" class="pageview-card">
+          <template #header>
+            <div class="card-header">
+              <span>{{ t('message.pageViews') }}</span>
+            </div>
+          </template>
+          <div class="pageview-item">
+            <span class="pageview-label">{{ t('message.visitorViews') }}</span>
+            <span class="pageview-count">{{ visitorCount }}</span>
+          </div>
+          <div class="pageview-item">
+            <span class="pageview-label">{{ t('message.userViews') }}</span>
+            <span class="pageview-count">{{ userCount }}</span>
+          </div>
+        </el-card>
       </div>
     </div>
     <div class="underline-text1">
@@ -102,6 +117,8 @@ import NotificationVc from "@/components/NotificationVc.vue"
 import axios from 'axios';
 import { useRouter } from 'vue-router'
 import { getAliyunMapData } from '@/api/map'
+import { recordPageView } from '@/api/pageview'
+import { useUserTokenStore } from '@/store/userToken'
 
 //中英文切换
 import { useI18n } from 'vue-i18n';
@@ -118,6 +135,27 @@ const navigateToMoreNotifications = () => {
 }
 // 示例新闻数据
 const newsItems = ref([]);
+
+const visitorCount = ref(0);
+const userCount = ref(0);
+
+const fetchPageViews = async () => {
+  try {
+    const userTokenStore = useUserTokenStore();
+    const token = userTokenStore.getUserToken();
+    const type = token ? 'user' : 'visitor';
+    const result = await recordPageView(type);
+    if (result.data.code === 0) {
+      const list = result.data.data;
+      list.forEach(item => {
+        if (item.viewType === 'visitor') visitorCount.value = item.count;
+        if (item.viewType === 'user') userCount.value = item.count;
+      });
+    }
+  } catch (error) {
+    console.error('Failed to record page view:', error);
+  }
+};
 
 // 轮廓图数据
 const contourList = ref([]);
@@ -282,6 +320,7 @@ onMounted(async () => {
   getMapData(initAdCode.value);
   fetchContours();
   fetchNotices();
+  fetchPageViews();
 });
 
 </script>
@@ -327,11 +366,41 @@ onMounted(async () => {
   margin-left: 100px;
   width: 400px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .information {
   margin-top: 10px;
+  flex: 0 0 auto;
+}
 
+.pageview-card {
+  margin-top: 15px;
+  flex: 1;
+}
+
+.pageview-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.pageview-item:last-child {
+  border-bottom: none;
+}
+
+.pageview-label {
+  font-size: 16px;
+  color: #333;
+}
+
+.pageview-count {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4A7DC5;
 }
 
 .card-header {
