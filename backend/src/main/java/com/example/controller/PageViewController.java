@@ -15,7 +15,7 @@ public class PageViewController {
     @Autowired
     private PageViewService pageViewService;
 
-    @PostMapping("/record")
+    @GetMapping("/record")
     public Result<List<PageView>> record(@RequestParam("type") String type) {
         List<PageView> list = pageViewService.recordAndGet(type);
         return Result.success(list);

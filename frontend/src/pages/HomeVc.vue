@@ -134,12 +134,11 @@ const newsItems = ref([]);
 const visitorCount = ref(0);
 const userCount = ref(0);
 
-const fetchPageViews = async () => {
-  try {
-    const userTokenStore = useUserTokenStore();
-    const token = userTokenStore.getUserToken();
-    const type = token ? 'user' : 'visitor';
-    const result = await recordPageView(type);
+const fetchPageViews = () => {
+  const userTokenStore = useUserTokenStore();
+  const token = userTokenStore.getUserToken();
+  const type = token ? 'user' : 'visitor';
+  recordPageView(type).then(result => {
     if (result.data.code === 0) {
       const list = result.data.data;
       list.forEach(item => {
@@ -147,9 +146,7 @@ const fetchPageViews = async () => {
         if (item.viewType === 'user') userCount.value = item.count;
       });
     }
-  } catch (error) {
-    console.error('Failed to record page view:', error);
-  }
+  }).catch(() => {});
 };
 
 // 轮廓图数据
