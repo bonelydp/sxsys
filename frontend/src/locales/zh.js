@@ -17,7 +17,6 @@ export default {
 
       notification:"通知",
       more: "更多",
-      pageViews: "浏览量",
       visitorViews: "访客浏览",
       userViews: "用户浏览",
       page: "页",

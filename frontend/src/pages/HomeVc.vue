@@ -21,21 +21,16 @@
           <NotificationVc v-for="(item, index) in newsItems.slice(0, 2)" :key="index" :id="item.id" :title="item.title"
             :date="item.date"></NotificationVc>
         </el-card>
-        <el-card shadow="hover" class="pageview-card">
-          <template #header>
-            <div class="card-header">
-              <span>{{ t('message.pageViews') }}</span>
-            </div>
-          </template>
-          <div class="pageview-item">
-            <span class="pageview-label">{{ t('message.visitorViews') }}</span>
-            <span class="pageview-count">{{ visitorCount }}</span>
+        <div class="pageview-stats">
+          <div class="stat-item">
+            <span class="number">{{ visitorCount }}</span>
+            <span class="description">{{ t('message.visitorViews') }}</span>
           </div>
-          <div class="pageview-item">
-            <span class="pageview-label">{{ t('message.userViews') }}</span>
-            <span class="pageview-count">{{ userCount }}</span>
+          <div class="stat-item">
+            <span class="number">{{ userCount }}</span>
+            <span class="description">{{ t('message.userViews') }}</span>
           </div>
-        </el-card>
+        </div>
       </div>
     </div>
     <div class="underline-text1">
@@ -375,32 +370,10 @@ onMounted(async () => {
   flex: 0 0 auto;
 }
 
-.pageview-card {
-  margin-top: 15px;
-  flex: 1;
-}
-
-.pageview-item {
+.pageview-stats {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  border-bottom: 1px dashed #ccc;
-}
-
-.pageview-item:last-child {
-  border-bottom: none;
-}
-
-.pageview-label {
-  font-size: 16px;
-  color: #333;
-}
-
-.pageview-count {
-  font-size: 24px;
-  font-weight: bold;
-  color: #4A7DC5;
+  gap: 20px;
+  margin-top: 15px;
 }
 
 .card-header {
