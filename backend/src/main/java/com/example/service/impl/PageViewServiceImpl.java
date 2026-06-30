@@ -17,7 +17,10 @@ public class PageViewServiceImpl implements PageViewService {
     @Override
     @Transactional
     public List<PageView> recordAndGet(String viewType) {
+        System.out.println("PageViewService: incrementing viewType=" + viewType);
         pageViewMapper.increment(viewType);
-        return pageViewMapper.selectAll();
+        List<PageView> result = pageViewMapper.selectAll();
+        System.out.println("PageViewService: after increment, counts=" + result);
+        return result;
     }
 }

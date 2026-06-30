@@ -135,18 +135,22 @@ const visitorCount = ref(0);
 const userCount = ref(0);
 
 const fetchPageViews = () => {
+  console.log('[PageView] fetchPageViews called');
   const userTokenStore = useUserTokenStore();
   const token = userTokenStore.getUserToken();
   const type = token ? 'user' : 'visitor';
+  console.log('[PageView] token=' + (token ? 'found' : 'none') + ', type=' + type);
   recordPageView(type).then(result => {
+    console.log('[PageView] API response code=' + result.data.code + ', data=', result.data.data);
     if (result.data.code === 0) {
       const list = result.data.data;
       list.forEach(item => {
         if (item.viewType === 'visitor') visitorCount.value = item.count;
         if (item.viewType === 'user') userCount.value = item.count;
       });
+      console.log('[PageView] counts updated: visitor=' + visitorCount.value + ', user=' + userCount.value);
     }
-  }).catch(err => console.error('Page view error:', err));
+  }).catch(err => console.error('[PageView] ERROR:', err));
 };
 
 // 轮廓图数据
