@@ -20,6 +20,7 @@ export default {
         more: "More",
         visitorViews: "Visitor Views",
         userViews: "User Views",
+        downloadCount: "Downloads",
         page: "page",
 
         dataVisualization: "Data Visualization",

@@ -30,6 +30,10 @@
             <span class="number">{{ userCount }}</span>
             <span class="description">{{ t('message.userViews') }}</span>
           </div>
+          <div class="stat-item">
+            <span class="number">{{ downloadCount }}</span>
+            <span class="description">{{ t('message.downloadCount') }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -133,6 +137,7 @@ const newsItems = ref([]);
 
 const visitorCount = ref(0);
 const userCount = ref(0);
+const downloadCount = ref(0);
 
 const fetchPageViews = () => {
   console.log('[PageView] fetchPageViews called');
@@ -147,8 +152,9 @@ const fetchPageViews = () => {
       list.forEach(item => {
         if (item.viewType === 'visitor') visitorCount.value = item.count;
         if (item.viewType === 'user') userCount.value = item.count;
+        if (item.viewType === 'download') downloadCount.value = item.count;
       });
-      console.log('[PageView] counts updated: visitor=' + visitorCount.value + ', user=' + userCount.value);
+      console.log('[PageView] counts updated: visitor=' + visitorCount.value + ', user=' + userCount.value + ', download=' + downloadCount.value);
     }
   }).catch(err => console.error('[PageView] ERROR:', err));
 };
@@ -373,8 +379,13 @@ onMounted(async () => {
 
 .pageview-stats {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 12px;
   margin-top: 15px;
+}
+
+.pageview-stats .stat-item {
+  flex: 1;
 }
 
 .card-header {

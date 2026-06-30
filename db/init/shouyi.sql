@@ -9638,5 +9638,6 @@ CREATE TABLE `page_view`  (
 -- ----------------------------
 INSERT INTO `page_view` VALUES (1, 'visitor', 5000);
 INSERT INTO `page_view` VALUES (2, 'user', 3000);
+INSERT INTO `page_view` VALUES (3, 'download', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

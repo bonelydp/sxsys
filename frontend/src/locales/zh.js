@@ -19,6 +19,7 @@ export default {
       more: "更多",
       visitorViews: "访客浏览",
       userViews: "用户浏览",
+      downloadCount: "下载量",
       page: "页",
       
       dataInformation:"数据库信息",

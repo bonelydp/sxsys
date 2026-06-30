@@ -34,6 +34,7 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ElMessage } from 'element-plus'
 import { Download } from '@element-plus/icons-vue'
+import { recordPageView } from '@/api/pageview'
 
 const { t } = useI18n()
 
@@ -70,6 +71,7 @@ const handleDownload = async (item) => {
     window.URL.revokeObjectURL(url)
     
     ElMessage.success('文件下载成功')
+    recordPageView('download').catch(() => {})
   } catch (error) {
     console.error('下载错误:', error)
     ElMessage.error('文件下载失败：' + error.message)

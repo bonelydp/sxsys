@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS `page_view` (
 
 INSERT IGNORE INTO `page_view` (`id`, `view_type`, `count`) VALUES (1, 'visitor', 5000);
 INSERT IGNORE INTO `page_view` (`id`, `view_type`, `count`) VALUES (2, 'user', 3000);
+INSERT IGNORE INTO `page_view` (`id`, `view_type`, `count`) VALUES (3, 'download', 0);
