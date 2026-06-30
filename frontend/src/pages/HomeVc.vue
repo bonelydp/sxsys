@@ -146,7 +146,7 @@ const fetchPageViews = () => {
         if (item.viewType === 'user') userCount.value = item.count;
       });
     }
-  }).catch(() => {});
+  }).catch(err => console.error('Page view error:', err));
 };
 
 // 轮廓图数据
