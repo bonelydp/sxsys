@@ -26,8 +26,8 @@ public class PageViewServiceImpl implements PageViewService {
             "`view_type` varchar(10) NOT NULL, " +
             "`count` bigint NOT NULL DEFAULT 0, " +
             "PRIMARY KEY (`id`))");
-        jdbcTemplate.execute("INSERT IGNORE INTO `page_view` (`id`, `view_type`, `count`) VALUES (1, 'visitor', 0)");
-        jdbcTemplate.execute("INSERT IGNORE INTO `page_view` (`id`, `view_type`, `count`) VALUES (2, 'user', 0)");
+        jdbcTemplate.execute("INSERT IGNORE INTO `page_view` (`id`, `view_type`, `count`) VALUES (1, 'visitor', 5000)");
+        jdbcTemplate.execute("INSERT IGNORE INTO `page_view` (`id`, `view_type`, `count`) VALUES (2, 'user', 3000)");
         System.out.println("PageViewService: table init done, counts=" + pageViewMapper.selectAll());
     }
 

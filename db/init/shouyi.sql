@@ -9636,7 +9636,7 @@ CREATE TABLE `page_view`  (
 -- ----------------------------
 -- Records of page_view
 -- ----------------------------
-INSERT INTO `page_view` VALUES (1, 'visitor', 0);
-INSERT INTO `page_view` VALUES (2, 'user', 0);
+INSERT INTO `page_view` VALUES (1, 'visitor', 5000);
+INSERT INTO `page_view` VALUES (2, 'user', 3000);
 
 SET FOREIGN_KEY_CHECKS = 1;
