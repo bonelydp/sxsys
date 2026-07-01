@@ -78,9 +78,9 @@ CREATE TABLE `contour`  (
 -- ----------------------------
 -- Records of contour
 -- ----------------------------
-INSERT INTO `contour` VALUES (14, '微信图片_20250326160617.jpg', '', 'http://localhost:8086/files/1742977620770-微信图片_20250326160617.jpg');
-INSERT INTO `contour` VALUES (15, '微信图片_20250326160630.jpg', '', 'http://localhost:8086/files/1742977624843-微信图片_20250326160630.jpg');
-INSERT INTO `contour` VALUES (16, 'huanon.png', '', 'http://localhost:8086/files/1742977631552-huanon.png');
+INSERT INTO `contour` VALUES (14, 'team-banner-01.webp', '', '/files/team-banner-01.webp');
+INSERT INTO `contour` VALUES (15, 'team-banner-02.webp', '', '/files/team-banner-02.webp');
+INSERT INTO `contour` VALUES (16, 'team-banner-03.webp', '', '/files/team-banner-03.webp');
 
 -- ----------------------------
 -- Table structure for contour1
@@ -96,7 +96,9 @@ CREATE TABLE `contour1`  (
 -- ----------------------------
 -- Records of contour1
 -- ----------------------------
-INSERT INTO `contour1` VALUES (4, 'http://localhost:8086/files/1749010557383-cp01.png', 'cp01.png');
+INSERT INTO `contour1` VALUES (4, '/files/banner00.webp', 'banner00.webp');
+INSERT INTO `contour1` VALUES (5, '/files/banner01.webp', 'banner01.webp');
+INSERT INTO `contour1` VALUES (6, '/files/banner02.webp', 'banner02.webp');
 
 -- ----------------------------
 -- Table structure for notice
