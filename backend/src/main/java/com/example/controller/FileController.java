@@ -88,8 +88,22 @@ public class FileController {
         OutputStream os;
         try {
             if (StrUtil.isNotEmpty(flag)) {
-                response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(flag, "UTF-8"));
-                response.setContentType("application/octet-stream");
+                String lowerFlag = flag.toLowerCase();
+                boolean isImage = lowerFlag.endsWith(".jpg") || lowerFlag.endsWith(".jpeg")
+                        || lowerFlag.endsWith(".png") || lowerFlag.endsWith(".gif")
+                        || lowerFlag.endsWith(".webp") || lowerFlag.endsWith(".svg");
+                if (isImage) {
+                    response.addHeader("Content-Disposition", "inline;filename=" + URLEncoder.encode(flag, "UTF-8"));
+                    String mimeType = lowerFlag.endsWith(".webp") ? "image/webp"
+                            : lowerFlag.endsWith(".svg") ? "image/svg+xml"
+                            : lowerFlag.endsWith(".png") ? "image/png"
+                            : lowerFlag.endsWith(".gif") ? "image/gif"
+                            : "image/jpeg";
+                    response.setContentType(mimeType);
+                } else {
+                    response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(flag, "UTF-8"));
+                    response.setContentType(MediaType.APPLICATION_OCTET_STREAM_VALUE);
+                }
                 byte[] bytes = FileUtil.readBytes(getUploadPath() + flag);
                 os = response.getOutputStream();
                 os.write(bytes);
