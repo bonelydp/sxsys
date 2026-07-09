@@ -20,6 +20,12 @@ backend/hs_err_pid*.log
 backend/files/
 data/files/*
 !data/files/.gitkeep
+!data/files/1742977697208-fyy.webp
+!data/files/1742977711072-ln.webp
+!data/files/1742977717490-gyq.webp
+!data/files/1742977723751-ydj.webp
+!data/files/1742977729032-xnb.webp
+!data/files/1742977733745-xr.webp
 data/bio_jobs/*
 !data/bio_jobs/.gitkeep
 __pycache__/
