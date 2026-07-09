@@ -19,7 +19,7 @@
     <div class="admin-members-container">
       <div class="admin-members-grid">
         <div v-for="(member, index) in adminMember" :key="index" class="admin-card">
-          <img :src="member.avatarUrl" :alt="member.name" class="member-photo">
+          <img :src="member.avatarUrl" :alt="member.name" class="member-photo" @error="e => e.target.src = Avatar">
           <div class="member-info">
             <p class="member-name">{{ member.name }}</p>
           </div>
@@ -32,7 +32,7 @@
     <div class="worker-members-container">
       <div class="worker-members-grid">
         <div v-for="(member, index) in workerMember" :key="index" class="worker-card">
-          <img :src="member.avatarUrl" :alt="member.name" class="member-photo">
+          <img :src="member.avatarUrl" :alt="member.name" class="member-photo" @error="e => e.target.src = Avatar">
           <div class="member-info">
             <p class="member-name">{{ member.name }}</p>
           </div>
@@ -85,7 +85,7 @@ onMounted(()=>{
 const adminMember = ref([
   {
     id: 1,
-    image: Avatar,
+    avatarUrl: Avatar,
     name: '张三',
     introduction: '信息介绍文本',
     category:'admin'
@@ -93,7 +93,7 @@ const adminMember = ref([
   },
   {
     id: 2,
-    image: Avatar,
+    avatarUrl: Avatar,
     name: '李四',
     introduction: '信息介绍文本',
     category:'worker'
@@ -102,7 +102,7 @@ const adminMember = ref([
 const workerMember = ref([
   {
     id: 1,
-    image: Avatar,
+    avatarUrl: Avatar,
     name: '张三',
     introduction: '信息介绍文本',
     category:'admin'
@@ -110,7 +110,7 @@ const workerMember = ref([
   },
   {
     id: 2,
-    image: Avatar,
+    avatarUrl: Avatar,
     name: '李四',
     introduction: '信息介绍文本',
     category:'worker'

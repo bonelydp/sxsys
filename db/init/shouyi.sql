@@ -9595,12 +9595,12 @@ CREATE TABLE `teamintroduction`  (
 -- ----------------------------
 -- Records of teamintroduction
 -- ----------------------------
-INSERT INTO `teamintroduction` VALUES (5, '冯耀宇', 'http://localhost:8086/files/1742977697208-fyy.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">二级教授</span></p><p><span style=\"color: rgb(206, 145, 120);\">、博导（国家杰出青年科学基金资助（2014年）、“百千万人才工程”和有突出贡献的中青年专家、“万人计划”领军人才，享受国务院特殊津贴专家，担任科技部重点领域创新团队的负责人、3个SCI期刊的编辑）</span></p>', 'admin');
-INSERT INTO `teamintroduction` VALUES (6, '李娜', 'http://localhost:8086/files/1742977711072-ln.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授（病原生物学与致病机制）</span></p>', 'worker');
-INSERT INTO `teamintroduction` VALUES (7, '郭亚琼', 'http://localhost:8086/files/1742977717490-gyq.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授、广东省杰青（比较基因组学与分子流行病学）</span></p>', 'worker');
-INSERT INTO `teamintroduction` VALUES (8, '元冬娟', 'http://localhost:8086/files/1742977723751-ydj.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授（病原寄生机制与演化规律）</span></p>', 'worker');
-INSERT INTO `teamintroduction` VALUES (9, '夏宁波', 'http://localhost:8086/files/1742977729032-xnb.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授、广东省杰青（代谢机制与防控技术）</span></p>', 'worker');
-INSERT INTO `teamintroduction` VALUES (10, '许瑞', 'http://localhost:8086/files/1742977733745-xr.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授（寄生病原的致病机制）</span></p>', 'worker');
+INSERT INTO `teamintroduction` VALUES (5, '冯耀宇', '/api/files/1742977697208-fyy.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">二级教授</span></p><p><span style=\"color: rgb(206, 145, 120);\">、博导（国家杰出青年科学基金资助（2014年）、“百千万人才工程”和有突出贡献的中青年专家、“万人计划”领军人才，享受国务院特殊津贴专家，担任科技部重点领域创新团队的负责人、3个SCI期刊的编辑）</span></p>', 'admin');
+INSERT INTO `teamintroduction` VALUES (6, '李娜', '/api/files/1742977711072-ln.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授（病原生物学与致病机制）</span></p>', 'worker');
+INSERT INTO `teamintroduction` VALUES (7, '郭亚琼', '/api/files/1742977717490-gyq.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授、广东省杰青（比较基因组学与分子流行病学）</span></p>', 'worker');
+INSERT INTO `teamintroduction` VALUES (8, '元冬娟', '/api/files/1742977723751-ydj.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授（病原寄生机制与演化规律）</span></p>', 'worker');
+INSERT INTO `teamintroduction` VALUES (9, '夏宁波', '/api/files/1742977729032-xnb.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授、广东省杰青（代谢机制与防控技术）</span></p>', 'worker');
+INSERT INTO `teamintroduction` VALUES (10, '许瑞', '/api/files/1742977733745-xr.jpg', '<p><span style=\"color: rgb(206, 145, 120);\">副教授（寄生病原的致病机制）</span></p>', 'worker');
 
 -- ----------------------------
 -- Table structure for user
