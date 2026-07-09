@@ -82,40 +82,8 @@ onMounted(()=>{
 
 //-------------------------------------------------------------------------------------
 
-const adminMember = ref([
-  {
-    id: 1,
-    avatarUrl: Avatar,
-    name: '张三',
-    introduction: '信息介绍文本',
-    category:'admin'
-
-  },
-  {
-    id: 2,
-    avatarUrl: Avatar,
-    name: '李四',
-    introduction: '信息介绍文本',
-    category:'worker'
-  },
-]);
-const workerMember = ref([
-  {
-    id: 1,
-    avatarUrl: Avatar,
-    name: '张三',
-    introduction: '信息介绍文本',
-    category:'admin'
-
-  },
-  {
-    id: 2,
-    avatarUrl: Avatar,
-    name: '李四',
-    introduction: '信息介绍文本',
-    category:'worker'
-  },
-]);
+const adminMember = ref([]);
+const workerMember = ref([]);
 
 const getTeamMemberData= async() =>{
   let adminResult = await getTeamMemberService("admin")
